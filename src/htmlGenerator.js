@@ -1,0 +1,5 @@
+const generateManagerHtml = (manager) => {
+    return `
+    
+    `
+}
