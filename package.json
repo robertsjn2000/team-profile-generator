@@ -3,5 +3,8 @@
     "inquire": "^0.4.8",
     "inquirer": "^8.2.0",
     "jest": "^27.4.7"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

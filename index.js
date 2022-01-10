@@ -4,6 +4,7 @@ const Intern = require("./lib/intern");
 const inquirer = require("inquirer");
 const fs =require("fs");
 const team = [];
+const generatePage = require("./src/htmlGenerator")
 
 const addManager = () => {
     return inquirer.prompt([
@@ -109,9 +110,26 @@ const addEmployee = () => {
     })
 }
 
+const writeHtmlFile = html => {
+    fs.writeFile("./dist/index.html", html, error =>{
+        if(error){
+            console.log(error);
+            return;
+        }else {
+            console.log("Index.html has been succesfully created");
+        }
+    })
+}
+
 addManager()
 .then(addEmployee)
 .then(team =>{
     console.log(team);
+    return generatePage(team)
 })
-
+.then(html => {
+    return writeHtmlFile(html)
+})
+.catch(error => {
+    console.log(error);
+})
