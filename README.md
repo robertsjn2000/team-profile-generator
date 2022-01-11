@@ -10,11 +10,11 @@ If your README is long, add a table of contents to make it easy for users to fin
 ## Installation
 Simply ensure that node.js and jest are installed to run the program.
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Run "node index.js" in the terminal to run the program. See the testing section of the README for instructions of how to run tests.
+
+copy and paste this link to see a walkthrough on how to use this application. 
+
+https://watch.screencastify.com/v/0EtGCO7tqiiAiF4lO3jg
 
 ## License
 MIT License
