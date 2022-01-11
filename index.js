@@ -5,7 +5,7 @@ const inquirer = require("inquirer");
 const fs =require("fs");
 const team = [];
 const generatePage = require("./src/htmlGenerator")
-
+//  this function leverages inquire prompts to ask questions in the terminal about the manager. This information is then used to populate the HTML page.
 const addManager = () => {
     return inquirer.prompt([
         {
@@ -35,6 +35,7 @@ const addManager = () => {
         return team
     })
 }
+// This function asks which type of employee the user would like to add to the list. It will continue to ask until the user selects exit.
 const addEmployee = () => {
     return inquirer.prompt([
         {
@@ -45,8 +46,10 @@ const addEmployee = () => {
              
         }
     ])
+    // This set of functions and else if statements give the user prompts depending on the user input.
     .then(input => {
         if(input.role == "engineer"){
+            //  this function leverages inquire prompts to ask questions in the terminal about the engineer. This information is then used to populate the HTML page.
             return inquirer.prompt([
                 {
                     type: "input",
@@ -75,6 +78,7 @@ const addEmployee = () => {
                 return addEmployee()
             })
         }
+        //  this function leverages inquire prompts to ask questions in the terminal about the intern. This information is then used to populate the HTML page.
         else if(input.role == "intern"){
             return inquirer.prompt([
                 {
@@ -109,7 +113,7 @@ const addEmployee = () => {
         }
     })
 }
-
+// This function will return a message in the console if there is an error or if the code executes succesfully.
 const writeHtmlFile = html => {
     fs.writeFile("./dist/index.html", html, error =>{
         if(error){
@@ -120,7 +124,6 @@ const writeHtmlFile = html => {
         }
     })
 }
-
 addManager()
 .then(addEmployee)
 .then(team =>{

@@ -1,3 +1,4 @@
+// These tests work with the manager class and its related functions. They make sure that the corrects parameters are returned.
 const Manager = require("../lib/manager")
 test("get the manager name", () =>{
     let manager = new Manager("john", "6", "jr@gmail.com", "12")
